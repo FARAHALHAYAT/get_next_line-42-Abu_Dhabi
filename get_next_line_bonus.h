@@ -3,6 +3,23 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+// # ifndef BUFFER_SIZE
+// #  define BUFFER_SIZE 1024
+// # endif
+// # include <unistd.h>
+// # include <stdlib.h>
+
+// typedef struct file
+// {
+// 	int			fd;
+// 	char		rb_ar[BUFFER_SIZE];
+// 	char		*str;
+// 	ssize_t		rb_size;
+// 	size_t		rb_pos;
+// 	size_t		s_capacity;
+// 	size_t		s_size;
+// 	struct file	*next;
+// }	t_file;
 
 char	*get_next_line(int fd);
 char	*ft_read_and_save(int fd, char *save);
