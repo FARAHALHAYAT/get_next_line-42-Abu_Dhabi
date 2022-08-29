@@ -17,7 +17,7 @@
 // 	size_t		s_capacity;
 // 	size_t		s_size;
 // 	struct file	*next;
-// }
+// }	t_file;
 
 # include <stdlib.h>
 # include <unistd.h>
