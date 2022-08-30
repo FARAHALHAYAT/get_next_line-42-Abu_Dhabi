@@ -18,8 +18,8 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1024
 # endif
-# include <stdlib.h>
 # include <unistd.h>
+# include <stdlib.h>
 
 typedef struct file
 {
@@ -31,14 +31,14 @@ typedef struct file
 	size_t		s_capacity;
 	size_t		s_size;
 	struct file	*next;
-}				t_file;
+}	t_file;
 
-char			*get_next_line(int fd);
-char			*ft_read_and_save(int fd, char *save);
-char			*ft_save(char *save);
-char			*ft_get_line(char *save);
-size_t			ft_strlen(char *str);
-char			*ft_strchr(char *s, int c);
-char			*ft_strjoin(char *s1, char *s2);
+char	*get_next_line(int fd);
+char	*ft_read_and_save(int fd, char *save);
+char	*ft_save(char *save);
+char	*ft_get_line(char *save);
+size_t	ft_strlen(char *str);
+char	*ft_strchr(char *s, int c);
+char	*ft_strjoin(char *s1, char *s2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: fasharif <fasharif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:52:06 by fasharif          #+#    #+#             */
-/*   Updated: 2022/08/30 18:31:44 by fasharif         ###   ########.fr       */
+/*   Updated: 2022/08/30 17:53:50 by fasharif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlen(char *str)
 {
-	size_t	l;
-
-	l = 0;
+	size_t  l;
+    
+    l = 0;
 	if (!str)
 		return (0);
 	while (str[l] != '\0')
@@ -35,7 +35,7 @@ char	*ft_strchr(char *s, int c)
 		return ((char *)&s[ft_strlen(s)]);
 	while (s[i] != '\0')
 	{
-		if (s[i] == (char)c)
+		if (s[i] == (char) c)
 			return ((char *)&s[i]);
 		i++;
 	}
