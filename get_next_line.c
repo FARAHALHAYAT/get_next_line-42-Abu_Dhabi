@@ -22,7 +22,7 @@ char	*ft_get_line(char *save)
 		return (NULL);
 	while (save[i] && save[i] != '\n')
 		i++;
-	s = (char *)malloc(sizeof(char) * (i + 2));
+	s = (char *)malloc(sizeof(char) * (i + 2)); // If it ends with \n, you need to put both \n and \0, so allocate storage space by length + 2
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -39,7 +39,7 @@ char	*ft_get_line(char *save)
 	s[i] = '\0';
 	return (s);
 }
-
+// A function that returns a single line (one line only)
 char	*ft_save(char *save)
 {
 	int		i;
@@ -65,37 +65,37 @@ char	*ft_save(char *save)
 	free(save);
 	return (s);
 }
-
+// Delete as many lines as read and return a new string
 char	*ft_read_and_save(int fd, char *save)
 {
 	char	*buff;
 	int		read_bytes;
 
-	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	buff = malloc((BUFFER_SIZE + 1) * sizeof(char)); // allocate memory ,'\0' because I have to add + 1
 	if (!buff)
 		return (NULL);
 	read_bytes = 1;
-	while (!ft_strchr(save, '\n') && read_bytes != 0)
+	while (!ft_strchr(save, '\n') && read_bytes != 0) // strchr is a function that checks if there is a matching character in a string. Checks if '\n' exists, and exits the loop if a newline character is encountered.
 	{
-		read_bytes = read(fd, buff, BUFFER_SIZE);
+		read_bytes = read(fd, buff, BUFFER_SIZE); // Read the string as much as BUFFER_SIZE using the read function and store it in the buffer. The length of the read string is stored in bytes.
 		if (read_bytes == -1)
 		{
 			free(buff);
 			return (NULL);
 		}
 		buff[read_bytes] = '\0';
-		save = ft_strjoin(save, buff);
+		save = ft_strjoin(save, buff); // Combines the read string in save and returns it
 	}
 	free(buff);
 	return (save);
 }
-
+// Function to read and save the whole things
 char	*get_next_line(int fd)
 {
 	char		*line;
 	static char	*save;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0) // If BUFFER_SIZE is 0 or negative, the read function cannot load the string properly, so exit If fd is negative then exit because it's not normal
 		return (0);
 	save = ft_read_and_save(fd, save);
 	if (!save)
