@@ -28,12 +28,12 @@ char	*ft_strchr(char *s, int c) // Function to check if there is a matching char
 {
 	int	i;
 
-	i = 0;
+	i = 0; // while (*s != (unsigned char)c) {
 	if (!s)
-		return (0);
-	if (c == '\0')
-		return ((char *)&s[ft_strlen(s)]);
-	while (s[i] != '\0')
+		return (0); // NULL
+	if (c == '\0') // s++
+		return ((char *)&s[ft_strlen(s)]); // }
+	while (s[i] != '\0') // return ((char *)s);
 	{
 		if (s[i] == (char) c)
 			return ((char *)&s[i]);
