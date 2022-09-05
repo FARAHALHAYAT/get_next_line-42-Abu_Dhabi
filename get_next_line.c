@@ -22,7 +22,7 @@ char	*ft_get_line(char *save)
 		return (NULL);
 	while (save[i] && save[i] != '\n')
 		i++;
-	s = (char *)malloc(sizeof(char) * (i + 2)); // If it ends with \n, you need to put both \n and \0, so allocate storage space by length + 2
+	s = (char *)malloc(sizeof(char) * (i + 2));  //(ft_strlen(save[i] - i + 1)  // If it ends with \n, you need to put both \n and \0, so allocate storage space by length + 2
 	if (!s)
 		return (NULL);
 	i = 0;
@@ -40,7 +40,7 @@ char	*ft_get_line(char *save)
 	return (s);
 }
 // A function that returns a single line (one line only)
-char	*ft_save(char *save)
+char	*ft_save(char *save) // or ft_strdup
 {
 	int		i;
 	int		c;
@@ -95,7 +95,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*save;
 
-	if (fd < 0 || BUFFER_SIZE <= 0) // If BUFFER_SIZE is 0 or negative, the read function cannot load the string properly, so exit If fd is negative then exit because it's not normal
+	if (fd < 0 || BUFFER_SIZE <= 0) // ( || read(fd, NULL, 0) < 0) // If BUFFER_SIZE is 0 or negative, the read function cannot load the string properly, so exit If fd is negative then exit because it's not normal
 		return (0);
 	save = ft_read_and_save(fd, save);
 	if (!save)
