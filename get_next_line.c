@@ -22,7 +22,7 @@ char	*ft_get_line(char *save)
 		return (NULL);
 	while (save[i] && save[i] != '\n')
 		i++;
-	s = (char *)malloc(sizeof(char) * (i + 2));  //(ft_strlen(save[i] - i + 1)  // If it ends with \n, you need to put both \n and \0, so allocate storage space by length + 2
+	s = (char *)malloc(sizeof(char) * (i + 2));  // If it ends with \n, you need to put both \n and \0, so allocate storage space by length + 2
 	if (!s)
 		return (NULL);
 	i = 0;
