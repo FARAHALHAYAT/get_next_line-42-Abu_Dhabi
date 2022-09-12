@@ -6,7 +6,7 @@
 /*   By: fasharif <fasharif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:52:06 by fasharif          #+#    #+#             */
-/*   Updated: 2022/08/30 21:13:11 by fasharif         ###   ########.fr       */
+/*   Updated: 2022/09/06 16:15:51 by fasharif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(char *str)
 	return (l);
 }
 
-char	*ft_strchr(char *s, int c) // Function to check if there is a matching character in a string If the character exists, return a pointer to where the character exists; otherwise, a null pointer is returned.
+char	*ft_strchr(char *s, int c)
 {
 	int	i;
 
@@ -48,7 +48,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	size_t	c;
 	char	*str;
 
-	if (!s1) //Handle when s1 is an empty string
+	if (!s1)
 	{
 		s1 = (char *)malloc(1 * sizeof(char));
 		s1[0] = '\0';

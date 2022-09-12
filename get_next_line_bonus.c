@@ -6,7 +6,7 @@
 /*   By: fasharif <fasharif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:54:56 by fasharif          #+#    #+#             */
-/*   Updated: 2022/08/30 20:44:58 by fasharif         ###   ########.fr       */
+/*   Updated: 2022/09/01 16:11:16 by fasharif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ char	*ft_read_and_save(int fd, char *save)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*save[256];
+	static char	*save[4096];
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 254)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
 	save[fd] = ft_read_and_save(fd, save[fd]);
 	if (!save[fd])
