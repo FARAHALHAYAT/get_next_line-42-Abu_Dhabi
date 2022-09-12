@@ -93,7 +93,7 @@ char	*ft_read_and_save(int fd, char *save)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*save[4096];
+	static char	*save[256];
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
